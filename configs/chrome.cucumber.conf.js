@@ -22,7 +22,7 @@ export const config = {
             {
                 browserName: "chrome",
                 "goog:chromeOptions": {
-                    args: ['--headless=new', '--no-sandbox', '--disable-dev-shm-usage','--window-size=1920,1080'],
+                    args: ["headless", "disable-gpu"],
                     prefs: {
                         "download.default_directory": downloadDir
                     }
