@@ -3,6 +3,7 @@ import HomePage from '../page-objects/HomePage.js';
 import AllureReporter from '@wdio/allure-reporter';
 import { assert } from 'chai';
 import Logger from '../../framework/utils/Logger.js';
+import Browser from '../../framework/browser/Browser.js';
 
 
 When('I consent data usage', async () => {

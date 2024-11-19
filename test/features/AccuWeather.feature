@@ -2,6 +2,7 @@ Feature: AccuWeather Test
 
     Background:
         Given I open main page
+        Then Main page is open
 
 
     Scenario: Search City

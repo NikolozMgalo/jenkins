@@ -1,7 +1,9 @@
 import Browser from '../../framework/browser/Browser.js';
-import { Given, When } from '@wdio/cucumber-framework';
+import { Given, When, Then } from '@wdio/cucumber-framework';
 import { mainConfig } from '../../framework/configs/main.wdio.conf.js';
 import AllureReporter from '@wdio/allure-reporter';
+import { assert } from 'chai'
+import HomePage from '../page-objects/HomePage.js';
 
 
 Given('I open main page', async () => {
@@ -14,3 +16,8 @@ When('I go back to main page', async () => {
     AllureReporter.addStep('I go back to main page');
     await Browser.Window.back();
 });
+
+Then('Main page is open', async () => {
+    AllureReporter.addAttachment('screen', await Browser.addScreenshot('screen'))
+    assert.isTrue(await HomePage.isPageOpened(), 'homepage not open');
+})
