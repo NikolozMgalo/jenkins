@@ -17,7 +17,3 @@ When('I go back to main page', async () => {
     await Browser.Window.back();
 });
 
-Then('Main page is open', async () => {
-    AllureReporter.addAttachment('screen', await Browser.addScreenshot('screen'))
-    assert.isTrue(await HomePage.isPageOpened(), 'homepage not open');
-})

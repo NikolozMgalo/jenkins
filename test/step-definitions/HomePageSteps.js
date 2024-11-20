@@ -17,6 +17,7 @@ When('I consent data usage', async () => {
 
 When(/^I input '(.*)' in search field$/, async (location) => {
     AllureReporter.addStep(`Input ${location} in search field`);
+    AllureReporter.addAttachment('screenshot', await Browser.addScreenshot())
     await HomePage.inputSearch(location);
 });
 

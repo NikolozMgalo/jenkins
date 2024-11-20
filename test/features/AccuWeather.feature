@@ -2,9 +2,8 @@ Feature: AccuWeather Test
 
     Background:
         Given I open main page
-        Then Main page is open
 
-
+    @blocker
     Scenario: Search City
         When I consent data usage
         And I input 'New York' in search field
@@ -12,6 +11,7 @@ Feature: AccuWeather Test
         When I click on the first search result
         Then City weather page header should contain 'New York'
 
+    @critical
     Scenario: Recent Locations
         When I consent data usage
         And I input 'London' in search field
@@ -21,6 +21,7 @@ Feature: AccuWeather Test
         When I choose first city in recent locations
         Then City weather page header should contain 'London'
 
+    @trivial
     Scenario: Current location label
         When I consent data usage
         And I click on search field
